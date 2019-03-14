@@ -2,7 +2,7 @@ import React from "react";
 
 class SearchBar extends React.Component {
   state = {
-    term: ""
+    term: "Seach for something"
   };
 
   onInputChange = event => {
@@ -17,6 +17,12 @@ class SearchBar extends React.Component {
     // calla callbacken från parent component
   };
 
+  onSearchClick = event => {
+    this.setState({
+      term: ""
+    });
+  };
+
   render() {
     return (
       <div className="search-bar ui segment">
@@ -27,6 +33,7 @@ class SearchBar extends React.Component {
               type="text"
               value={this.state.term}
               onChange={this.onInputChange}
+              onClick={this.onSearchClick}
             />
           </div>
         </form>
